@@ -1,0 +1,24 @@
+using namespace std;
+
+bool isPalindrome(string str) {
+    stack<char> s;
+    for (char c : str) {
+        s.push(c);
+    }
+
+    for (char c : str) {
+        if (s.top() != c) return false;
+        s.pop();
+    }
+    return true;
+}
+
+int main() {
+    string input = "madam";
+    if (isPalindrome(input)) {
+        cout << "Palindrome";
+    } else {
+        cout << "Not a Palindrome";
+    }
+    return 0;
+}
